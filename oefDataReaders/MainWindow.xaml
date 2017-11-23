@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:oefDataReaders"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="MainWindow" Height="350" Width="648.529">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Margin="5" Name="btnAllInvoices">Get All Invoices</Button>
+            <Label>Vendorid:</Label>
+            <TextBox Margin="5" Width="150"></TextBox>
+            <Button Margin="5" Name="btnVendor">Get Vendor Invoices</Button>
+        </StackPanel>
+
+        <DockPanel DockPanel.Dock="Bottom">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                <Label DockPanel.Dock="Right">Total Balance Due</Label>
+                <TextBox Margin="5" DockPanel.Dock="Right" Width="150" Name="txtTotalBalance"></TextBox>
+            </StackPanel>
+            <StackPanel></StackPanel>
+        </DockPanel>
         
-    </Grid>
+        <DataGrid Name="dgInvoices">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="InvoiceNumber" Binding="{Binding Path=InvoiceNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="InvoiceDate" Binding="{Binding Path=InvoiceDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="InvoiceTotal" Binding="{Binding Path=InvoiceTotal}"></DataGridTextColumn>
+                <DataGridTextColumn Header="PaymentTotal" Binding="{Binding Path=PaymentTotal}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CreditTotal" Binding="{Binding Path=CreditTotal}"></DataGridTextColumn>
+                <DataGridTextColumn Header="BalanceDue" Binding="{Binding Path=BalanceDue}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Due Date" Binding="{Binding Path=DueDate}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        
+    </DockPanel>
 </Window>
