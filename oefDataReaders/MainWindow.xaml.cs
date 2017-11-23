@@ -24,5 +24,17 @@ namespace oefDataReaders
         {
             InitializeComponent();
         }
+
+        private void btnAllInvoices_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                dgInvoices.ItemsSource = DM_Invoice.GetInvoices();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
     }
 }

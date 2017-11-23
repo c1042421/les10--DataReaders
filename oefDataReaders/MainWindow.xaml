@@ -8,7 +8,7 @@
         Title="MainWindow" Height="350" Width="648.529">
     <DockPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <Button Margin="5" Name="btnAllInvoices">Get All Invoices</Button>
+            <Button Margin="5" Name="btnAllInvoices" Click="btnAllInvoices_Click">Get All Invoices</Button>
             <Label>Vendorid:</Label>
             <TextBox Margin="5" Width="150"></TextBox>
             <Button Margin="5" Name="btnVendor">Get Vendor Invoices</Button>
